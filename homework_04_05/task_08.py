@@ -1,9 +1,9 @@
-#Создать функцию sum_and_max, которая принимает на вход неопределенное количество аргументов
-#и возвращает их сумму и максимальное из них. Использовать встроенные sum и max разрешено.
+#Напишите функцию generate_squares, которая принимает произвольное количество аргументов и возвращает список, состоящий из их квадратов.
+#То есть generate_squares(1, 2, 3) -> [1, 4, 9]
 
-def sum_and_max(*args):
-    return sum(args), max(args)
+def generate_squares(*args) -> list:
+    list_squares = [i ** 2 for i in args]
+    return list_squares
 
 
-print(sum_and_max(1, 2, 3, 4, 5))
-print(sum_and_max(5.6, 8, -6, 0, -1.2))
+print(generate_squares(1, 0, -2, 100, 2.3))

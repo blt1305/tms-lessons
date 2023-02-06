@@ -1,11 +1,17 @@
-#Напишите функцию my_round, аналог встроенной round (ссылка на документацию). Использование самой функции round запрещено.
-def my_round(number: float, digit: int) -> float:
-    factor = 10.0 ** digit         #коэффициент пересчета - 10 в степени того числа, сколько знаков нужно оставить
-    resalt = number * factor       #умножаем число на коэффициент
-    resalt = resalt + 0.5          #добавляем 0,5, если после знака число > 0,5, то случится переход через 1
-    resalt = int(resalt)           #отбрасываем знаки после запятой
-    resalt = resalt / factor       #делим на тот же коэффициент
+#Напишите функцию get_longest_word, которая на вход принимает текст (только английские слова и пробелы),
+#и возвращает самое длинное слово из этого текста. Для разбиения строки на слова используйте функцию split.
+#"hello this is a string with words and spaces and big big woooooooooord" -> "woooooooooord"
+
+def get_longest_word(my_string: str) -> str:
+    list_words = my_string.split()      #преобразуем строку в список слов
+    len_word = len(list_words[0])       #максимальная длина пока - длина первого слова
+    for i in range(1, len(list_words)): #счетчик слов от первого до последнего
+        if len(list_words[i]) > len_word:       #если длина очередного слова больше, чем длина найденного до этого максимального
+            resalt = list_words[i]              #в результат отправим слово
+            len_word = len(list_words[i])       #изменим переменную с макс. длиной слова
+
     return resalt
 
-print(my_round(1.235, 2))
-print(my_round(78.565941, 3))
+
+my_str = "hello this is a string with words and spaces and big big woooooooooord"
+print(get_longest_word(my_str))
