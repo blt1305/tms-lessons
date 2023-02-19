@@ -10,13 +10,19 @@
 #Используйте функцию reduce.
 
 from functools import reduce
+# def my_join(lst, sep):
+#     my_list = lst.split()
+#     my_list_1 = [x + sep for x in my_list]
+#     result = reduce(lambda x, y: x + y, my_list_1)
+#     return result
+
 def my_join(lst, sep):
-    my_list = lst.split()
-    my_list_1 = [x + sep for x in my_list]
-    result = reduce(lambda x, y: x + y, my_list_1)
+    #my_list = lst.split()
+    #my_list_1 = [x + sep for x in my_list]
+    result = reduce(lambda x, y: x + sep + y, lst)
     return result
 
 
-a = input('введите строку: ')
+a = input('введите строку: ').split()
 b = input('введите символ-разделитель: ')
 print(my_join(a, b))
