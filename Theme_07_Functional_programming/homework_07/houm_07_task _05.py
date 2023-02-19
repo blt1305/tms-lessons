@@ -10,6 +10,8 @@
 # а создать функцию-декоратор check_types, пометив каждую из функций вашим декоратором (@check_types)
 
 
+# использовать ф-цию isinstance()
+
 from functools import reduce
 
 def plus(x, y):
