@@ -19,6 +19,7 @@ class Point:
         return math.hypot(cathet_1, cathet_2)
 
 # 6.5 Скопируйте код из комментария к слайду и проверьте, что он выводит ожидаемый результат.
+if __name__ == '__main__'
 
 p1 = Point(3, 4)
 p2 = Point(3, 10)
